@@ -15,7 +15,7 @@ $hoverColor: #e6e6e6;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 8rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -27,7 +27,6 @@ $hoverColor: #e6e6e6;
   width: 5rem;
   height: 1.5rem;
 }
-
 .navbarAvatar {
   width: 1.5rem;
   height: 1.5rem;
@@ -74,9 +73,9 @@ $hoverColor: #e6e6e6;
 }
 
 .leftContainer {
-  width: 100%;
+  width: 25%;
   height: 50%;
-  margin: 0 2rem;
+  margin: 0 5rem;
   padding: 2rem;
 }
 
@@ -93,7 +92,6 @@ $hoverColor: #e6e6e6;
   color: $textColor;
   margin-top: 1rem;
 }
-
 .buttonVue {
   width: 6rem;
   height: 2.25rem;
@@ -220,12 +218,20 @@ $hoverColor: #e6e6e6;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+@media screen and (max-width: 1024px) {
+  .leftContainer {
+    width: 75%;
+    margin: 0 1rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .navbar {
     padding: 2rem 1rem;
   }
 
   .leftContainer {
+    width: 50%;
     margin: 0 1rem;
   }
 

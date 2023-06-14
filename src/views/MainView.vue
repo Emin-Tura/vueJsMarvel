@@ -71,8 +71,8 @@
 </template>
 
 <script lang="ts">
-import Navbar from "@/components/Navbar.vue";
-import Button from "@/components/Button.vue";
+import Navbar from "../components/Navbar.vue";
+import Button from "../components/Button.vue";
 import axios from "axios";
 
 export default {

@@ -31,8 +31,32 @@
 </template>
 
 <script lang="ts">
-import Navbar from "@/components/Navbar.vue";
+import Navbar from "../components/Navbar.vue";
 import axios from "axios";
+
+interface Hero {
+  thumbnail: {
+    path: string;
+  };
+  description: string;
+  format: string;
+  pageCount: number;
+  prices: {
+    price: number;
+  }[];
+  creators: {
+    items: {
+      name: string;
+    }[];
+  };
+  dates: {
+    date: string;
+  }[];
+  urls: {
+    url: string;
+  }[];
+  title: string;
+}
 
 export default {
   name: "ComicDetailView",
@@ -41,7 +65,7 @@ export default {
   },
   data() {
     return {
-      hero: {},
+      hero: {} as Hero,
       standarSizes: "portrait_incredible.jpg",
     };
   },

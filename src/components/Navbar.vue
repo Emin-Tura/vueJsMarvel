@@ -50,12 +50,13 @@ export default {
   },
   methods: {
     handleScroll() {
-      const scrollPosition = window.pageYOffset;
-      const navbar = document.querySelector(".navbar");
-      const navbarHeight = navbar.offsetHeight;
-      const opacity = Math.min(scrollPosition / navbarHeight, 1);
-
-      this.navbarStyle.backgroundColor = `rgba(236, 29, 36, ${opacity})`;
+      const navbar = document.querySelector(".navbar") as HTMLElement | null;
+      if (navbar) {
+        const navbarHeight = navbar.offsetHeight;
+        const scrollPosition = window.pageYOffset;
+        const opacity = Math.min(scrollPosition / navbarHeight, 1);
+        this.navbarStyle.backgroundColor = `rgba(236, 29, 36, ${opacity})`;
+      }
     },
   },
 };

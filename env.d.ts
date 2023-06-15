@@ -8,9 +8,11 @@ interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
 import { Store } from "@/store"; // path to store file
+import { Set } from "vue";
 declare module "@vue/runtime-core" {
   interface ComponentCustomProperties {
     $store: Store;
+    $set: Set;
   }
 }
 

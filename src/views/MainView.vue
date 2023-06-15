@@ -86,8 +86,8 @@ export default {
     Footer,
   },
   data: () => ({
-    heros: [],
-    likedHeros: {},
+    heros: [] as any[],
+    likedHeros: {} as Record<number, boolean>,
     standarSizes: "standard_large.jpg",
     totalLikes: 0,
   }),
@@ -112,7 +112,11 @@ export default {
         .then((response) => {
           this.heros = response.data.data.results;
           this.heros.forEach((hero) => {
-            this.$set(this.likedHeros, hero.id, false);
+            this.$set(
+              this.likedHeros as Record<number, boolean>,
+              hero.id,
+              false
+            );
           });
         })
         .catch((e) => {
@@ -120,9 +124,13 @@ export default {
         });
     },
     parallaxBackground() {
-      const container = document.querySelector(".mainContainer");
-      const scrollPosition = window.pageYOffset;
-      container.style.backgroundPositionY = scrollPosition * 0.7 + "px";
+      const container = document.querySelector(
+        ".mainContainer"
+      ) as HTMLElement | null;
+      if (container) {
+        const scrollPosition = window.pageYOffset;
+        container.style.backgroundPositionY = scrollPosition * 0.7 + "px";
+      }
     },
     toggleLike(hero) {
       hero.isLiked = !hero.isLiked;

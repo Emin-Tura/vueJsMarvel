@@ -84,7 +84,7 @@ export default {
     getCharacter() {
       axios
         .get(
-          `http://gateway.marvel.com/v1/public/comics/${
+          `https://gateway.marvel.com/v1/public/comics/${
             this.$route.params.id
           }?ts=1&apikey=${
             import.meta.env.VITE_PUBLIC_KEY

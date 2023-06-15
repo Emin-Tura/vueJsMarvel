@@ -104,7 +104,7 @@ export default {
     getHeros() {
       axios
         .get(
-          `http://gateway.marvel.com/v1/public/comics?ts=1&apikey=${
+          `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${
             import.meta.env.VITE_PUBLIC_KEY
           }&hash=48c435789acfc545957422b6da00ae9d`
         )

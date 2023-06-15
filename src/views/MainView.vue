@@ -47,6 +47,7 @@
                     : hero.description
                 }}
               </p>
+              <img class="arrowIcon" src="../assets/img/arrow.png" alt="icon" />
             </div>
 
             <img
@@ -67,12 +68,14 @@
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import Navbar from "../components/Navbar.vue";
 import Button from "../components/Button.vue";
+import Footer from "../components/Footer.vue";
 import axios from "axios";
 
 export default {
@@ -80,6 +83,7 @@ export default {
   components: {
     Navbar,
     Button,
+    Footer,
   },
   data: () => ({
     heros: [],
